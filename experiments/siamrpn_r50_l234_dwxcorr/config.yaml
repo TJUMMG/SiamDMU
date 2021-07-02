@@ -1,0 +1,60 @@
+META_ARC: "siamrpnpp_changeanchor"
+
+BACKBONE:
+    TYPE: "resnet50"
+    KWARGS:
+        used_layers: [2, 3, 4]
+
+ADJUST:
+    ADJUST: true
+    TYPE: "AdjustAllLayer"
+    KWARGS:
+        in_channels: [512, 1024, 2048]
+        out_channels: [256, 256, 256]
+
+RPN:
+    TYPE: 'MultiRPN'
+    KWARGS:
+        anchor_num: 5
+        in_channels: [256, 256, 256]
+        weighted: true
+
+MASK:
+    MASK: false
+
+ANCHOR:
+    STRIDE: 8
+    RATIOS: [0.33, 0.5, 1, 2, 3]
+    SCALES: [8]
+    ANCHOR_NUM: 5
+
+TRACK:
+    TYPE: 'SiamRPNTracker'
+    PENALTY_K: 0.05
+    WINDOW_INFLUENCE: 0.42
+    LR: 0.38
+    EXEMPLAR_SIZE: 127
+    INSTANCE_SIZE: 255
+    BASE_SIZE: 8
+    CONTEXT_AMOUNT: 0.5
+    VOT2016:
+        ALPHA: 0.98159192
+        BETA: 0.85639422
+        LAMBDA: 0.18263456
+        GAMMA: 1.
+    VOT2018:
+        ALPHA: 0.99444943
+        BETA: 0.8287976
+        LAMBDA: 0.15897189
+        GAMMA: 1.
+    VOT2019:
+        ALPHA: 0.98611457
+        BETA: 0.83385432
+        LAMBDA: 0.15795734
+        GAMMA: 1.
+    UAV123:
+        ALPHA: 0.97747788
+        BETA: 0.8450581
+        LAMBDA: 0.24173581
+        GAMMA: 1.
+
