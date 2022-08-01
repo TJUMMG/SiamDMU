@@ -6,7 +6,7 @@ Introduction
 --------------------------------
 We propose a novel tracker named Siamese Dual Mask Update (SiamDMU), which utilizes motion and semantic information to generate the enhanced tracking results for updating the template.</br>
 
-[The Results of SiamDMU are here.](https://github.com/TJUMMG/SiamDMU/blob/main/results.zip) </br>
+[The Results of SiamDMU are here.](https://pan.baidu.com/s/1Lx_YF8nSzommRv8igQZuqw) Baidu:2333</br>
 
 Requirements
 --------------------------
